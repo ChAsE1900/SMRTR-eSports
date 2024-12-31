@@ -1,26 +1,63 @@
+"use client";
+
+import PlusIcon from "../assets/icons/plus.svg"
+import MinusIcon from "../assets/icons/minus.svg"
+import React from "react";
+import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
+
 const items = [
   {
-    question: "What payment methods do you accept?",
+    question: "How do I join the team?",
     answer:
-      "We accept all major credit cards, PayPal, and various other payment methods depending on your location. Please contact our support team for more information on accepted payment methods in your region.",
+      "To join, simply reach out through our recruitment form on Discord or contact a team manager. Make sure to highlight your skills and experience in competitive gaming!",
   },
   {
-    question: "How does the pricing work for teams?",
+    question: "Are there tryouts for new members?",
     answer:
-      "Our pricing is per user, per month. This means you only pay for the number of team members you have on your account. Discounts are available for larger teams and annual subscriptions.",
+      "Yes, we conduct regular tryouts to evaluate new members. Keep an eye on our Discord announcements for upcoming tryout dates and requirements.",
   },
   {
-    question: "Can I change my plan later?",
+    question: "Can I switch roles within the team?",
     answer:
-      "Yes, you can upgrade or downgrade your plan at any time. Changes to your plan will be prorated and reflected in your next billing cycle.",
+      "Absolutely! We're flexible and support role changes if it aligns with the team's needs. Discuss your preferred role with the team captain or coach.",
   },
   {
-    question: "Is my data secure?",
+    question: "How does the team ensure fair play?",
     answer:
-      "Security is our top priority. We use state-of-the-art encryption and comply with the best industry practices to ensure that your data is stored securely and accessed only by authorized users.",
+      "We have a strict no-cheating policy. Our moderation team actively monitors gameplay, and we use advanced tools to ensure fairness and integrity during matches.",
   },
 ];
 
+const AccordionItem = ({question, answer}: {question: string; answer: string;}) => {
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  return(
+  <div className="py-7 border-b border-white/30 hover:cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+  <div className="flex items-center">
+    <span className="flex-1 text-lg font-bold">{question}</span>
+    {isOpen ? <MinusIcon/> : <PlusIcon/>}
+  </div>
+  <AnimatePresence>
+  {isOpen && (
+    <motion.div initial={{opacity: 0, height: 0, margin: 0, marginTop: 0}} animate={{opacity: 1, height: "auto", marginTop: "16px"}} exit={{opacity: 0, height: 0, marginTop: 0}}>{answer}</motion.div>
+  )}
+  </AnimatePresence>
+</div>
+  )
+}
+
 export const FAQs = () => {
-  return null;
+  return (
+    <div className="bg-black text-white bg-gradient-to-b from-gray-400 to-black py-[72px] sm:py-24">
+      <div className="container">
+        <h2 className="text-center text-5xl sm:text-6xl sm:max-w-[648px] mx-auto font-bold tracking-tighter">Fequently asked questions</h2>
+        <div className="mt-12 max-w-[648px] mx-auto">
+          {items.map(({ question, answer}) => (
+            <AccordionItem question={question} answer={answer} key={question} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };

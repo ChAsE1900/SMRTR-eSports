@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logo from "../assets/images/s.webp"
 import MenuIcon from "../assets/icons/menu.svg"
+import InteractiveHoverButton from "./ui/interactive-hover-button"
 
 export const Navbar = () => {
   return (
@@ -20,7 +21,7 @@ export const Navbar = () => {
           <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Updates</a>
           <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Help</a>
           <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Customers</a>
-          <button className="bg-white py-2 px-4 rounded-lg">Get for free</button>
+          <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
         </nav>
       </div>
     </div>
