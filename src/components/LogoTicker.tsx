@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import acmeLogo from "../assets/images/acme.png";
 import quantumLogo from "../assets/images/quantum.png";
