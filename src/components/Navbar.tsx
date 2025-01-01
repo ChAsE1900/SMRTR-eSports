@@ -1,30 +1,87 @@
+'use client'
+
+import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from 'lucide-react';
 import logo from "../assets/images/s.webp"
-import MenuIcon from "../assets/icons/menu.svg"
 import InteractiveHoverButton from "./ui/interactive-hover-button"
 
+const navItems = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/team", text: "Team" },
+  { href: "/partner", text: "Partner" },
+];
+
 export const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-  <div className="bg-black">
-  <div className="px-4">
-      <div className="py-4 flex items-center justify-between">
-        <div className="relative">
-          <div className="absolute w-full top-2 bottom-0 bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#C2F0B1,#2FD8FE)] blur-md"></div>
-          <Image src={logo} alt="logo" className="h-20 w-20 relative"/>
+    <div className="bg-black">
+      <div className="px-4">
+        <div className="py-4 flex items-center justify-between">
+          <div className="relative">
+            <div className="absolute w-full top-2 bottom-0 bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#C2F0B1,#2FD8FE)] blur-md"></div>
+            <Image src={logo} alt="logo" className="h-20 w-20 relative"/>
+          </div>
+          <button 
+            onClick={toggleMobileMenu}
+            className="border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <X className="text-white" /> : <Menu className="text-white"/>}
+          </button>
+          <nav className="gap-6 items-center hidden sm:flex">
+            {navItems.map((item, index) => (
+              <a key={index} href={item.href} className="text-opacity-60 text-white hover:text-opacity-100 transition">
+                {item.text}
+              </a>
+            ))}
+            <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
+          </nav>
         </div>
-        <div className="border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden">
-          <MenuIcon className="text-white"/>
-        </div>
-        <nav className="gap-6 items-center hidden sm:flex">
-          <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">About</a>
-          <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Features</a>
-          <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Updates</a>
-          <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Help</a>
-          <a href="#" className="text-opacity-60 text-white hover:text-opacity-100 transition">Customers</a>
-          <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
-        </nav>
       </div>
-    </div>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="sm:hidden bg-black overflow-hidden"
+          >
+            <nav className="flex flex-col items-center py-4">
+              {navItems.map((item, index) => (
+                <motion.a 
+                  key={index} 
+                  href={item.href} 
+                  className="text-white py-2 hover:text-opacity-60 transition"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.text}
+                </motion.a>
+              ))}
+              <motion.div 
+                className="mt-4"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+              >
+                <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 };
