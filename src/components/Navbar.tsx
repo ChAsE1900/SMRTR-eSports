@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from 'lucide-react';
-import logo from "../assets/images/s.webp"
+import logo from "../assets/images/SMRTR8.webp"
 import InteractiveHoverButton from "./ui/interactive-hover-button"
 
 const navItems = [
