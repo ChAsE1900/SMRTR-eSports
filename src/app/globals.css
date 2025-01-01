@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  html {
+    @apply bg-black; /* Top and bottom areas */
+  }
+  body {
+    @apply bg-background text-foreground; /* Main site content */
+    min-height: 100vh; /* Ensure it covers full viewport */
+  }
+}
