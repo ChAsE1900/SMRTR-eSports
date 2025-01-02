@@ -22,8 +22,8 @@ const LoginPage = () => {
   const signInWithDiscord = async () => {
     const redirectUrl =
       process.env.NODE_ENV === "production"
-        ? `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`
-        : `${window.location.origin}/auth/callback`;  // Use environment-based URL
+        ? `${process.env.NEXT_PUBLIC_SITE_URL}/default`
+        : `${window.location.origin}/default`;  // Use environment-based URL
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'discord',
