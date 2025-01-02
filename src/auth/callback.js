@@ -1,6 +1,6 @@
-import { supabase } from '@/utils/supabase';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { supabase } from '@/utils/supabase';
 
 export default function AuthCallback() {
   const router = useRouter();
@@ -17,7 +17,9 @@ export default function AuthCallback() {
         return router.push('/auth/auth-code-error');
       }
 
-      router.push('/default'); // Redirect to home page on success.
+      // Determine where to redirect after successful authentication.
+      const redirectTo = new URL(window.location.href).searchParams.get('redirectTo') || '/default';
+      router.push(redirectTo); // Redirect to the specified `redirectTo` path, default to '/default'.
     };
 
     handleOAuthCallback();

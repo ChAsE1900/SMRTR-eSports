@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { supabase } from '@/utils/supabase'
-import { FaDiscord } from 'react-icons/fa';  // This is correct for `react-icons` v4.x
+import { FaDiscord } from 'react-icons/fa';
 import logo from "@/assets/images/SMRTR8.webp"
 import Image from 'next/image'
 import { Footer } from '@/components/Footer';
@@ -20,10 +20,15 @@ const LoginPage = () => {
   }, [searchParams])
 
   const signInWithDiscord = async () => {
+    const redirectUrl =
+      process.env.NODE_ENV === "production"
+        ? `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`
+        : `${window.location.origin}/auth/callback`;  // Use environment-based URL
+
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'discord',
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: redirectUrl,
       },
     })
 
@@ -36,7 +41,7 @@ const LoginPage = () => {
     const checkUser = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
-        const redirectUrl = redirectTo || '/app/default'
+        const redirectUrl = redirectTo || '/default'
         router.push(redirectUrl)
       }
     }
