@@ -4,13 +4,11 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const aboutText = `
-Welcome to SMRTR eSports, a dedicated esports organization with a passion for competitive Fortnite. Our team was founded with a mission to push the limits of performance, strategy, and community engagement in the ever-evolving world of Battle Royale gaming.
+About SMRTR
+SMRTR Esports is a rising esports organization committed to fostering both professional players and aspiring talents. With a focus on competitive gaming and content creation, we aim to establish a strong global presence in the esports world.
 
-At SMRTR eSports, we pride ourselves on fostering a culture of teamwork, resilience, and continuous growth. We bring together talented players, skilled strategists, and creative minds to achieve success both in-game and in the broader esports landscape. Whether competing in high-stakes tournaments or engaging in rigorous practice sessions, our team is committed to excellence and innovation.
-
-More than just players, we are builders of a vibrant and inclusive community. Through our Discord server, streaming events, and community tournaments, we aim to connect with fans and Fortnite enthusiasts around the globe. Our goal is to inspire others to embrace their potential, work collaboratively, and elevate the competitive spirit.
-
-Join us as we aim for greatness in Fortnite and beyond. Together, we are shaping the future of esports, one game at a time.
+Our Vision
+At SMRTR, we believe that success in esports doesnt come solely from talent but is driven by hard work, passion, teamwork, and innovation. Our goal is to discover, nurture, and provide a platform for players and content creators to thrive. Hard work is the key to achieving greatness and ensuring sustainable success in the competitive esports scene.
 `
 
 export const About = () => {

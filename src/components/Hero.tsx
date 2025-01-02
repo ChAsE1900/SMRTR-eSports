@@ -24,7 +24,7 @@ export const Hero = () => {
         </div>
         <div className="flex justify-center mt-8 ">
           <div className="inline-flex relative">
-            <h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center inline-flex">Just smarter</h1>
+            {/* Delete when Banner */}<h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center inline-flex">Just smarter</h1>
             <motion.div className="absolute right-[590px] top-[108px] hidden sm:inline" drag dragSnapToOrigin>
               <Image src={discord} alt="" height="200" width="200" className="max-w-none" draggable="false"/>
             </motion.div>
@@ -32,11 +32,11 @@ export const Hero = () => {
         </div>
         <div className="flex justify-center">
         <p className="text-center text-xl mt-8 max-w-md">
-            Level up your game with an Discord built to track your performance, fuel your passion, and celebrate every victory in your esports journey
+           {/* Delete when Banner */} Level up your game with an Discord built to track your performance, fuel your passion, and celebrate every victory in your esports journey
         </p>
         </div>
         <div className="flex justify-center mt-8">
-          <RainbowButton href="https://discord.gg/smrtrgg" className="hover:opacity-50 transition hover:-translate-y-2">Get Unlimited Access</RainbowButton>
+          <RainbowButton href="https://discord.gg/smrtrgg" className="hover:opacity-50 transition hover:-translate-y-2">Join the Discord</RainbowButton>
         </div>
       </div>
     </div>
