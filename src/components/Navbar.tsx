@@ -7,7 +7,7 @@ import logo from "../assets/images/SMRTR8.webp";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
 
 const navItems = [
-  { href: "/", text: "Home" },
+  { href: "/default", text: "Home" },
   { href: "/about", text: "About" },
   { href: "/team", text: "Team" },
   { href: "/partner", text: "Partner" },
