@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { supabase } from '@/utils/supabase'
-import { FaDiscord } from 'react-icons/fa'
+import { FaDiscord } from 'react-icons/fa';  // This is correct for `react-icons` v4.x
 import logo from "@/assets/images/SMRTR8.webp"
 import Image from 'next/image'
 import { Footer } from '@/components/Footer';
