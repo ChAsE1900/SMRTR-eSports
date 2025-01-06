@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from 'lucide-react';
-import logo from "../assets/images/SMRTR8.webp";
+import logo from "../assets/images/pb.webp";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
 
 const navItems = [
@@ -27,7 +27,7 @@ export const Navbar = () => {
           {/* Left Side: Logo */}
           <div className="relative">
             <div className="absolute w-full top-2 bottom-0 bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#C2F0B1,#2FD8FE)] blur-md"></div>
-            <Image src={logo} alt="logo" className="h-20 w-20 relative" />
+            <Image src={logo} alt="logo" className="h-20 w-20 relative rounded-md" />
           </div>
 
           {/* Center: Title */}
