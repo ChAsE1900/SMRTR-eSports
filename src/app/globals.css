@@ -75,12 +75,11 @@
   }
 }
 
-@layer base {
-  html {
-    @apply bg-black; /* Top and bottom areas */
-  }
-  body {
-    @apply bg-background text-foreground; /* Main site content */
-    min-height: 100vh; /* Ensure it covers full viewport */
-  }
+
+html, body {
+  background-color: black;
+  color: white; /* Optional, falls Textfarbe notwendig ist */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }

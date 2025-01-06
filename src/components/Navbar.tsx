@@ -7,7 +7,7 @@ import logo from "../assets/images/pb.webp";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
 
 const navItems = [
-  { href: "/default", text: "Home" },
+  { href: "/", text: "Home" },
   { href: "/about", text: "About" },
   { href: "/team", text: "Team" },
   { href: "/partner", text: "Partner" },
@@ -53,7 +53,7 @@ export const Navbar = () => {
                 {item.text}
               </a>
             ))}
-            <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
+            <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" className="text-black"/>
           </nav>
         </div>
       </div>
