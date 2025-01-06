@@ -37,7 +37,6 @@ export const Introduction = () => {
             <Tag>Future Goals</Tag>
           </div>
           <div className="text-4xl md:text-6xl lg:text-6xl text-center text-white font-medium mt-10">
-            <span>Your Esports Team</span>
             <div className="mt-6 space-y-4 text-xl md:text-4xl lg:text-5xl leading-relaxed">
               {lines.map((line, index) => (
                 <div
