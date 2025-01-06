@@ -29,7 +29,7 @@ export const Hero = () => {
         </div>
 
         {/* Call-to-Action */}
-        <div className="flex justify-center mt-14">
+        <div className="flex justify-center mt-14 lg:mt-20">
           <RainbowButton
             href="https://discord.gg/smrtrgg"
             className="hover:opacity-50 transition hover:-translate-y-2"
