@@ -1,6 +1,6 @@
 import ArrowIcon from "../assets/icons/arrow-w.svg";
 import { RainbowButton } from "./ui/rainbow-button";
-import headerImage from "../assets/images/Header.png"; // Your header image file here
+import headerImage from "@/assets/images/Header.png"; // Your header image file here
 
 export const Hero = () => {
   return (
