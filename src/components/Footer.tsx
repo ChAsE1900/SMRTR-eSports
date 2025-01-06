@@ -14,6 +14,7 @@ export const Footer = () => {
             <Link href="https://x.com/Smrtr_esports"><XSocial/></Link>
             <Link href="https://www.instagram.com/smrtr.gg/"><InstaIcon/></Link>
             <Link href="https://www.tiktok.com/@smrtr.gg"><TikTokIcon/></Link>
+            <Link href="https://www.youtube.com/@smrtr_esports"><YoutubeIcon/></Link>
           </ul>
         </div>
       </div>
