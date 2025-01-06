@@ -1,13 +1,14 @@
 import ArrowIcon from "../assets/icons/arrow-w.svg";
 import { RainbowButton } from "./ui/rainbow-button";
-import headerImage from "../assets/images/Header.png";
+
+const HeroImage = "/Header.png"; // Public folder asset
 
 export const Hero = () => {
   return (
     <div
       className="bg-black text-white bg-gradient-to-b from-black via-[#808080] to-[#bdbdbd] py-[72px] sm:py-24 relative overflow-hidden"
       style={{
-        backgroundImage: `url(${headerImage.src})`, // Next.js requires the .src property
+        backgroundImage: `url(${HeroImage})`, // Corrected syntax
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
