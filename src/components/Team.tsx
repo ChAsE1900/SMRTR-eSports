@@ -10,7 +10,7 @@ const reviews = [
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Head Scout & Recruitmend Lead",
+    name: "Head Scout & Recruitment Lead",
     username: "@Kobe",
     body: "",
     img: "https://avatar.vercel.sh/jill",
