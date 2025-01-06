@@ -2,6 +2,7 @@ import InstaIcon from "../assets/icons/insta.svg"
 import XSocial from "../assets/icons/x-social.svg"
 import TikTokIcon from "../assets/icons/tiktok.svg"
 import YoutubeIcon from "../assets/icons/youtube.svg"
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -10,10 +11,9 @@ export const Footer = () => {
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
           <div className="text-center">&copy; 2025 SMRTR eSports</div>
           <ul className="flex justify-center">
-            <li><XSocial/></li>
-            <li><InstaIcon/></li>
-            <li><TikTokIcon/></li>
-            <li><YoutubeIcon/></li>
+            <Link href="https://x.com/Smrtr_esports"><XSocial/></Link>
+            <Link href="https://www.instagram.com/smrtr.gg/"><InstaIcon/></Link>
+            <Link href="https://www.tiktok.com/@smrtr.gg"><TikTokIcon/></Link>
           </ul>
         </div>
       </div>
