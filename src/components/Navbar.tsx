@@ -88,7 +88,7 @@ export const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
               >
-                <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it" />
+                <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Get it"  className="text-white"/>
               </motion.div>
             </nav>
           </motion.div>
