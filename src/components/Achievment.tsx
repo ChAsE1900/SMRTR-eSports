@@ -34,7 +34,7 @@ const achievements = [
 export function Achievements() {
 
   return (
-    <section className="py-20 bg-gray-400">
+    <section className="py-20 bg-gray-400 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export function Achievements() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4">
             Our achievements for the future
           </h2>
           <p className="text-black-400">
