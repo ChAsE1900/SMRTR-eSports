@@ -34,7 +34,7 @@ const achievements = [
 export function Achievements() {
 
   return (
-    <section className="py-20 bg-gray-400 overflow-hidden">
+    <section className="py-20 bg-black overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-black/20 rounded-xl p-6 text-center"
+              className="bg-black/20 border border-gray-600 rounded-xl p-6 text-center"
             >
               <div className="text-black-400 mb-4 flex justify-center">
                 {achievement.icon}

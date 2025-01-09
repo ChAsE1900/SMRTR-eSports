@@ -1,93 +1,60 @@
-import { cn } from "@/lib/utils";
-import Marquee from "@/components/ui/marquee";
-import Image from "next/image";
+import Image from 'next/image'
+import { Card, CardContent } from "@/components/ui/card"
 
 const reviews = [
   {
     name: "Founder",
     username: "@akêdo",
-    body: "",
     img: "https://avatar.vercel.sh/jack",
   },
   {
     name: "Head Scout & Recruitment Lead",
     username: "@Kobe",
-    body: "",
     img: "https://avatar.vercel.sh/jill",
   },
   {
     name: "Community Manager",
     username: "@Quave; Mirco",
-    body: "",
     img: "https://avatar.vercel.sh/john",
   },
   {
     name: "Head Manager",
     username: "@Daeky",
-    body: "",
     img: "https://avatar.vercel.sh/jane",
   },
   {
     name: "Event Manager",
     username: "@amo",
-    body: "",
     img: "https://avatar.vercel.sh/jenny",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
-
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-}: {
-  img: string;
-  name: string;
-  username: string;
-  body: string;
-}) => {
+export default function OurTeam() {
   return (
-    <figure
-      className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-gray-50/[.1] bg-gray-50/[.10] hover:bg-gray-50/[.15]",
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <Image className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium text-white/40">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-white">{body}</blockquote>
-    </figure>
-  );
-};
-
-export function MarqueeDemo() {
-  return (
-    <div className="bg-black py-16">
-      <h2 className="text-white text-center font-bold text-5xl sm:text-6xl tracking-tighter">Our Team</h2>
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-50/[.1] bg-black md:shadow-xl">
-        <Marquee pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black"></div>
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold text-center mb-12">Our Team</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {reviews.map((member, index) => (
+          <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg bg-gray-200">
+            <CardContent className="p-6">
+              <div className="flex items-center space-x-4">
+                <Image
+                  src={member.img}
+                  alt={member.name}
+                  width={64}
+                  height={64}
+                  className="rounded-full"
+                />
+                <div>
+                  <h2 className="text-xl font-semibold">{member.name}</h2>
+                  <p className="text-sm text-muted-foreground">{member.username}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
-  );
+  )
 }
+

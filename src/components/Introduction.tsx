@@ -30,7 +30,7 @@ export const Introduction = () => {
   }, [lineIndex]);
 
   return (
-    <section className="bg-gray-400 py-28 lg:py-40 overflow-clip">
+    <section className="bg-black py-28 lg:py-40 overflow-clip">
       <div className="container">
         <div className="sticky top-20 md:top-28 lg:top-40">
           <div className="flex justify-center">
