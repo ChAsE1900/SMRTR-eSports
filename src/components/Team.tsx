@@ -22,7 +22,8 @@ const reviews = [
 export default function OurTeam() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center mb-12">Our Team</h1>
+      <h1 className="text-6xl font-bold text-center mb-12">Team</h1>
+      <h2 className="text-4xl font-semibold text-center mb-5">Staff</h2>
       <div className="flex flex-col items-center space-y-8 md:space-y-12">
         {/* Akêdo's Card */}
         <div className="flex justify-center">
@@ -70,6 +71,7 @@ export default function OurTeam() {
           ))}
         </div>
       </div>
+      <h2 className="text-4xl font-semibold text-center pt-10">Player...</h2>
     </div>
   );
 }
