@@ -8,6 +8,7 @@ export function OrbitingCirclesDemo() {
       <div className="relative h-[500px] w-full flex flex-col items-center justify-center">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-white to-gray-500 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent">
           Partners
+          <p className="text-sm">We are currently looking for new partners</p>
         </span>
 
         {/* Inner Circles */}

@@ -52,7 +52,7 @@ export const Navbar = () => {
                 {item.text}
               </a>
             ))}
-            <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Join" className="text-black"/>
+            <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Discord" className="text-black"/>
           </nav>
         </div>
       </div>
@@ -87,7 +87,7 @@ export const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
               >
-                <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Join"  className="text-black"/>
+                <InteractiveHoverButton href="https://discord.gg/smrtrgg" text="Discord"  className="text-black"/>
               </motion.div>
             </nav>
           </motion.div>
