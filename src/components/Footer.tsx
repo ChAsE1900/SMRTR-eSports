@@ -13,6 +13,7 @@ export const Footer = () => {
         <div className="space-y-3">
           <Link href="/" className="block hover:text-gray-300 uppercase text-sm font-medium">Home</Link>
           <Link href="/about" className="block hover:text-gray-300 uppercase text-sm font-medium">About us</Link>
+          <Link href="/imprint" className="block hover:text-gray-300 uppercase text-sm font-medium">Imprint</Link>
           <Link href="https://discord.gg/smrtrgg" className="block hover:text-gray-300 uppercase text-sm font-medium">Contact us</Link>
         </div>
         <div className="text-center lg:pt-10">&copy; 2025 SMRTR eSports</div>
